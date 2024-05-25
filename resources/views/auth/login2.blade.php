@@ -29,7 +29,8 @@
                 <div class="mb-4">
                     <label for="email" class="block text-base mb-1">Email</label>
                     <input type="email" name="email" id="email" required
-                        class="w-full border border-gray-400 rounded focus:border-primary focus:ring-0 focus:outline-none px-3 py-2">
+                        class="w-full border border-gray-400 rounded focus:border-primary focus:ring-0 focus:outline-none px-3 py-2"
+                        value="{{ old('email') }}">
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
 
