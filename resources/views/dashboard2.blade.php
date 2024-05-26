@@ -142,8 +142,8 @@
             <!-- Main content area -->
             <div class="p-4">
                 <div class="shadow-sm bg-white px-3 py-5 rounded-md">
-                    <div class="text-gray-900 font-medium text-xl">Selamat Pagi Danara !</div>
-                    <div class="text-sm">Selamat Datang di SIM Kartar Permata Safira Regency</div>
+                    <div class="font-medium text-base lg:text-xl">Selamat Pagi Danara !</div>
+                    <div class="text-xs lg:text-sm">Selamat Datang di SIM Kartar Permata Safira Regency</div>
                 </div>
             </div>
         </div>
