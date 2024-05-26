@@ -12,7 +12,7 @@ Route::get('/tes/dashboard', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard2');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/tes/login', function () {
