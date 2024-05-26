@@ -25,6 +25,7 @@ export default {
                     900: "#7f1d1d",
                     DEFAULT: "#DA251D",
                 },
+                admin: "#F8FAFC",
             },
             fontFamily: {
                 sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
