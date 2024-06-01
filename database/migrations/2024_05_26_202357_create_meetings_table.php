@@ -11,12 +11,25 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('meetings', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('meeting_title');
-            $table->text('meeting_description')->nullable();
-            $table->date('meeting_date');
+            $table->string('id')->primary();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
+            $table->enum('type', ['raker', 'rakor', 'ratin', 'racil']);
+            $table->enum('status', [
+                'Dijadwalkan',
+                'Berlangsung',
+                'Selesai',
+                'Dibatalkan',
+                'Ditunda',
+                'Dijadwalkan Ulang',
+                'Menunggu Persetujuan',
+                'Draft',
+                'Ditolak',
+                'Dikonfirmasi'
+            ])->comment('Status Pertemuan');
             $table->string('location');
             $table->timestamps();
         });

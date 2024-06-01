@@ -8,6 +8,7 @@
     <title>Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @yield('link-css')
 </head>
 
 <body class="bg-admin relative">
@@ -15,7 +16,7 @@
     <div class="flex">
         <!-- Sidebar -->
         <div id="sidebar"
-            class="sidebar transform -translate-x-full lg:translate-x-0 transition-transform duration-300 bg-white w-64 h-screen fixed lg:relative z-20">
+            class="sidebar transform -translate-x-full lg:translate-x-0 transition-transform duration-300 bg-white w-64 fixed lg:relative z-20 min-h-screen">
             <div class="p-4">
                 <div class="flex items-center justify-between">
                     <a class="flex gap-2 items-center" href="{{ route('dashboard') }}">
@@ -121,7 +122,7 @@
         <div id="overlay" class="hidden lg:hidden fixed inset-0 bg-black opacity-50 z-10"></div>
 
         <!-- Main content -->
-        <div class="flex-1">
+        <div class="flex-auto">
             <div class="flex items-center justify-between lg:justify-end shadow-sm bg-white p-5">
                 <button id="menu-button" class="lg:hidden">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -217,6 +218,9 @@
             });
         });
     </script>
+
+    @yield('script-js')
+
 </body>
 
 </html>

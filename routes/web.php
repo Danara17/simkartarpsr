@@ -18,7 +18,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/meeting', [MeetingController::class, 'index'])->name('meeting.index');
+    Route::prefix('meeting')->group(function () {
+        Route::get('/', [MeetingController::class, 'index'])->name('meeting.index');
+        Route::get('/create', [MeetingController::class, 'create'])->name('meeting.create');
+        Route::post('/store', [MeetingController::class, 'store'])->name('meeting.store');
+        Route::get('/edit/{id}', [MeetingController::class, 'edit'])->name('meeting.edit');
+    });
+
 
 });
 
